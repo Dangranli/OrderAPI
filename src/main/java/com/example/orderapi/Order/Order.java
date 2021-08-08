@@ -21,8 +21,8 @@ public class Order {
     @Column(length = 15)
     private Boolean ifShipped;
 
-    @Column(length = 15)
-    private Date shipDate;
+    @Column(length = 255)
+    private String shipDate;
 
     @Column(length = 15)
     private Boolean acceptShipDate;
@@ -56,11 +56,11 @@ public class Order {
         this.ifShipped = ifShipped;
     }
 
-    public Date getShipDate() {
+    public String getShipDate() {
         return shipDate;
     }
 
-    public void setShipDate(Date shipDate) {
+    public void setShipDate(String shipDate) {
         this.shipDate = shipDate;
     }
 

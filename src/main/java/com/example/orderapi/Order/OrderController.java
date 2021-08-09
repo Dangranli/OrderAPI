@@ -24,9 +24,9 @@ public class OrderController {
         return listOrders;
     }
     @GetMapping("order/{orderId}")
-    public String showOneOrder(@PathVariable("orderId") Long orderId) throws NotFoundExceptions {
+    public Order showOneOrder(@PathVariable("orderId") Long orderId) throws NotFoundExceptions {
         Order order = orderService.getOrderById(orderId);
-        return "order";
+        return order;
     }
     @GetMapping("Catalog/sku")
     public List<Catalog> SkuList() {
@@ -34,9 +34,8 @@ public class OrderController {
         return listSkus;
     }
     @GetMapping("Catalog/sku/{skuId}")
-    public String showOneSku(@PathVariable("skuId") Long skuId) throws NotFoundExceptions {
+    public Catalog showOneSku(@PathVariable("skuId") Long skuId) throws NotFoundExceptions {
         Catalog catalog = catalogService.getSkuById(skuId);
-        return "sku";
+        return catalog;
     }
-
 }
